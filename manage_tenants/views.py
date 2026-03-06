@@ -1,48 +1,30 @@
-#------------------------
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .models import Dashboard, NewTenant, ShowTenant
+from .serializers import DashboardSerializer, NewTenantSerializer, ShowTenantSerializer
+
 # Dashboard
-#------------------------
-from rest_framework import generics
-from .models import Dashboard
-from .serializers import DashboardSerializer
-
-
-class DashboardListCreateView(generics.ListCreateAPIView):
+class DashboardListCreateView(ListCreateAPIView):
     queryset = Dashboard.objects.all()
     serializer_class = DashboardSerializer
 
-
-class DashboardDetailView(generics.RetrieveUpdateDestroyAPIView):
+class DashboardDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Dashboard.objects.all()
     serializer_class = DashboardSerializer
-#------------------------
+
 # Add Tenant
-#------------------------
-from rest_framework import generics
-from .models import NewTenant
-from .serializers import NewTenantSerializer
-
-
-class TenantListCreateView(generics.ListCreateAPIView):
+class TenantListCreateView(ListCreateAPIView):
     queryset = NewTenant.objects.all()
     serializer_class = NewTenantSerializer
 
-
-class TenantDetailView(generics.RetrieveUpdateDestroyAPIView):
+class TenantDetailView(RetrieveUpdateDestroyAPIView):
     queryset = NewTenant.objects.all()
     serializer_class = NewTenantSerializer
-#----------------------------
+
 # Show Tenant
-#----------------------------
-from rest_framework import generics
-from .models import ShowTenant
-from .serializers import ShowTenantSerializer
-
-
-class ShowTenantListCreateView(generics.ListCreateAPIView):
+class ShowTenantListCreateView(ListCreateAPIView):
     queryset = ShowTenant.objects.all()
     serializer_class = ShowTenantSerializer
 
-
-class ShowTenantDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ShowTenantDetailView(RetrieveUpdateDestroyAPIView):
     queryset = ShowTenant.objects.all()
     serializer_class = ShowTenantSerializer

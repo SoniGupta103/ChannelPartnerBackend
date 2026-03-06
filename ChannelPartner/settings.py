@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'rest_framework',
     'corsheaders',
 
@@ -66,7 +67,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'ChannelPartner.urls'
-
+APPEND_SLASH = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

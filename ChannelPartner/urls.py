@@ -23,12 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('dashboard.urls')),
     path('api/', include('update_agent.urls')),
-    path('api/update_payout/', include('update_payout.urls')),
+    path('api/update-payout/', include('update_payout.urls')),
     path('api/repayment_recovery/', include('repayment_recovery.urls')),
-    path('agent_performance/', include('agent_performance.urls')),
-    path('performance_template/', include('performance_template.urls')),
-    path('manage_tenants/',include('manage_tenants.urls')),
-    path('Promotional_Offers/',include('Promotional_Offers.urls'))
+    path('agent/', include('agent_performance.urls')), 
+    path('performance/', include('performance_template.urls')),
+    path('manage/',include('manage_tenants.urls')),
+    path('letter/',include('Promotional_Offers.urls'))
 ]
 
 if settings.DEBUG:
